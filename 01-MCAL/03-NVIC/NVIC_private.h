@@ -36,6 +36,6 @@ typedef struct
 #define GRP_0_SUB_4_BITS		0b111
 
 /* Macro for private key code */
-#define AIRCR_PRIVKEY	0x05FA
+#define AIRCR_PRIVKEY			0x05FA
 
 #endif

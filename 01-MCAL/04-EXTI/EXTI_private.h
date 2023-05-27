@@ -22,6 +22,4 @@ typedef struct
 
 #define MEXTI			((volatile EXTI_t *)0x40013C00)
 
-#define SYSCFG_CR1		*((volatile u32 *)0x40013808)
-
 #endif

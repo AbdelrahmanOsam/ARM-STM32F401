@@ -14,4 +14,10 @@
 			AHB
 			AHB_DIV_BY_8
 	*/
+#define STK_INTERRUPT_ENABLE	DISABLE
+#define MSTK_ENABLE				ENABLE
+/* Options :-
+			ENABLE
+			DISABLE
+	*/
 #endif

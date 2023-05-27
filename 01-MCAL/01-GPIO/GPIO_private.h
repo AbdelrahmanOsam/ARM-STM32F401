@@ -14,7 +14,6 @@
 #define GPIOB_BASE_ADDRESS		0x40020400
 #define GPIOC_BASE_ADDRESS		0x40020800
 
-
 #define GPIOA_MODER				*((volatile u32 *)(GPIOA_BASE_ADDRESS+0x00))
 #define GPIOA_OTYPER			*((volatile u32 *)(GPIOA_BASE_ADDRESS+0x04))
 #define GPIOA_OSPEEDR           *((volatile u32 *)(GPIOA_BASE_ADDRESS+0x08))
@@ -47,7 +46,6 @@
 #define GPIOC_LCKR              *((volatile u32 *)(GPIOC_BASE_ADDRESS+0x1C))
 #define GPIOC_AFRL              *((volatile u32 *)(GPIOC_BASE_ADDRESS+0x20))
 #define GPIOC_AFRH              *((volatile u32 *)(GPIOC_BASE_ADDRESS+0x24))
-
 
 /*******macros for output mode value ********/
 #define OUTPUT_PUSH_PULL_VALUE		0b0000000000000000

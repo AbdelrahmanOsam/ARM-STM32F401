@@ -38,7 +38,7 @@ void MRCC_voidInit(void)
 			/* Enable PLL clock source */
 			SET_BIT(RCC_CR,RCC_CR_PLLON);
 			/* Select PLL as CPU clock source */
-			SET_BIT(RCC_CFGR,RCC_CFGR_SW0);
+			CLEAR_BIT(RCC_CFGR,RCC_CFGR_SW0);
 			SET_BIT(RCC_CFGR,RCC_CFGR_SW1);
 		#elif PLL_CLOCK_SELECTION == RCC_HSE
 			/* Enable HSE clock source */
@@ -48,7 +48,7 @@ void MRCC_voidInit(void)
 			/* Enable PLL clock source */
 			SET_BIT(RCC_CR,RCC_CR_PLLON);
 			/* Select PLL as CPU clock source */
-			SET_BIT(RCC_CFGR,RCC_CFGR_SW0);
+			CLEAR_BIT(RCC_CFGR,RCC_CFGR_SW0);
 			SET_BIT(RCC_CFGR,RCC_CFGR_SW1);
 		#else
 			#error "Configuration Error : PLL clock selection error"

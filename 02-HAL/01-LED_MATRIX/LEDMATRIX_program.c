@@ -75,6 +75,7 @@ void HLEDMATRIX_voidInit(LED_MATRIX *LED_MatrixObj)
 	MGPIO_voidSetOutputPinSpeed(LED_MatrixObj->LED_MATRIX_ColPort,LED_MatrixObj->LED_MATRIX_Col6,MEDIUM_SPEED);
 	MGPIO_voidSetOutputPinSpeed(LED_MatrixObj->LED_MATRIX_ColPort,LED_MatrixObj->LED_MATRIX_Col7,MEDIUM_SPEED);
 }
+
 static void HLEDMATRIX_voidDisableAllCols(LED_MATRIX *LED_MatrixObj)
 {
 		/*** Disable all cols ***/
