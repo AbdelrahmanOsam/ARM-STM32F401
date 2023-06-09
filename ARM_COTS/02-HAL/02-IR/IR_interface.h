@@ -13,6 +13,8 @@
 void HIR_voidInit(void);
 void HIR_voidGetRemoteFrame(void);
 void HIR_voidTakeAction(void);
-//void HIR_RemoteFunctions(void);
+
+/* global variable that carry the values of buttons*/
+extern u8 Global_u8ButtonData;
 
 #endif

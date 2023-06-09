@@ -373,58 +373,60 @@ void MGPIO_voidAtomicSetPinValue(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8PinV
 		break;
 	}
 }
-/******************** Edited function *******************/
-/*void MGPIO_voidAtomicSetPinValue(u8 Copy_u8PortID,u32 Copy_u8PinID,u8 Copy_u8PinValue)
+
+void MGPIO_voidSetAlternativeMode(u8 Copy_u8PortID, u8 Copy_u8PinID, u8 Copy_u8AlternativeMode)
 {
 	switch(Copy_u8PortID)
 	{
-		case GPIOA :
-			if (Copy_u8PinValue == GPIO_LOW)
+		case GPIO_PORTA :
+			if(Copy_u8PinID <= 7)
 			{
-				Copy_u8PinID = Copy_u8PinID<<16;
-				GPIOA_BSRR = (Copy_u8PinID);
+				GPIOA_AFRL &=~ (0b1111<<(Copy_u8PinID*4));
+				GPIOA_AFRL |= (Copy_u8AlternativeMode<<(Copy_u8PinID*4));
 			}
-			else if (Copy_u8PinValue == GPIO_HIGH)
+			else if(Copy_u8PinID <=15)
 			{
-				GPIOA_BSRR = (Copy_u8PinID);
-			}
-			else
-			{
-				// Error
-			}
-		break;
-		case GPIOB :
-			if (Copy_u8PinValue == GPIO_LOW)
-			{
-				Copy_u8PinID = Copy_u8PinID<<16;
-				GPIOB_BSRR = (Copy_u8PinID);
-			}
-			else if (Copy_u8PinValue == GPIO_HIGH)
-			{
-				GPIOB_BSRR = (Copy_u8PinID);
+				Copy_u8PinID -= 8;
+				GPIOA_AFRH &=~ (0b1111<<(Copy_u8PinID*4));
+				GPIOA_AFRH |= (Copy_u8AlternativeMode<<(Copy_u8PinID*4));
 			}
 			else
 			{
-				// Error
+				//error
 			}
 		break;
-		case GPIOC :
-			if (Copy_u8PinValue == GPIO_LOW)
+		case GPIO_PORTB :
+			if(Copy_u8PinID <= 7)
 			{
-				Copy_u8PinID = Copy_u8PinID<<16;
-				GPIOC_BSRR = (Copy_u8PinID);
+				GPIOB_AFRL &=~ (0b1111<<(Copy_u8PinID*4));
+				GPIOB_AFRL |= (Copy_u8AlternativeMode<<(Copy_u8PinID*4));
 			}
-			else if (Copy_u8PinValue == GPIO_HIGH)
+			else if(Copy_u8PinID <=15)
 			{
-				GPIOC_BSRR = (1<<Copy_u8PinID);
+				Copy_u8PinID -= 8;
+				GPIOB_AFRH &=~ (0b1111<<(Copy_u8PinID*4));
+				GPIOB_AFRH |= (Copy_u8AlternativeMode<<(Copy_u8PinID*4));
 			}
 			else
 			{
-				// Error
+				//error
 			}
 		break;
-		default :
-			// error state
-		break;
+		case GPIO_PORTC :
+			if(Copy_u8PinID <= 7)
+			{
+				GPIOB_AFRL &=~ (0b1111<<(Copy_u8PinID*4));
+				GPIOB_AFRL |= (Copy_u8AlternativeMode<<(Copy_u8PinID*4));
+			}
+			else if(Copy_u8PinID <=15)
+			{
+				Copy_u8PinID -= 8;
+				GPIOB_AFRH &=~ (0b1111<<(Copy_u8PinID*4));
+				GPIOB_AFRH |= (Copy_u8AlternativeMode<<(Copy_u8PinID*4));
+			}
+			else
+			{
+				//error
+			}
 	}
-}*/
+}

@@ -182,3 +182,5 @@ void HIR_voidTakeAction(void)
 	Global_u8EdgeCounter = 0;
 	Global_u8StartEdgeFlag = 0 ;
 }
+
+

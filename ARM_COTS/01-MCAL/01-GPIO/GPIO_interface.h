@@ -10,15 +10,24 @@
 #ifndef GPIO_INTERFACE_H
 #define GPIO_INTERFACE_H
 
-
+	/* Initialize GPIO */
 void MGPIO_voidInit(void);
+	/* Set Pin Mode */
 void MGPIO_voidSetPinMode(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8PinMode);
+	/* Set output mode for the output pins */
 void MGPIO_voidSetOutputPinMode(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8OutputPinMode);
+	/* Set speed for the output pins */
 void MGPIO_voidSetOutputPinSpeed(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8OutputPinSpeed);
+	/* Set pull mode for input pins */
 void MGPIO_voidSetPinPullMode(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8PinPullMode);
+	/* Set pin value for output pins */
 void MGPIO_voidSetPinValue(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8PinValue);
+	/* Get the value of pin */
 u8 MGPIO_voidGetPinValue(u8 Copy_u8PortID,u8 Copy_u8PinID);
+	/* set the value of pin */
 void MGPIO_voidAtomicSetPinValue(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8PinValue);
+	/* Set the alternative mode for the AF pin */
+void MGPIO_voidSetAlternativeMode(u8 Copy_u8PortID, u8 Copy_u8PinID, u8 Copy_u8AlternativeMode);
 
 /*** Macros for PORT ***/
 #define GPIO_PORTA						0
@@ -77,7 +86,7 @@ void MGPIO_voidAtomicSetPinValue(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8PinV
 #define GPIO_HIGH_SPEED					0b10
 #define GPIO_VERY_HIGH_SPEED			0b11
 
-/*** MAcros for Pull mode ***/
+/*** Macros for Pull mode ***/
 #define GPIO_NO_PULL					0b00
 #define GPIO_PULL_UP					0b01
 #define GPIO_PULL_DOWN					0b10
@@ -85,5 +94,8 @@ void MGPIO_voidAtomicSetPinValue(u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8PinV
 /*** Macros for pin value ***/
 #define GPIO_LOW						0
 #define GPIO_HIGH						1
+
+/*** Macros for Alternative modes ***/
+#define MGPIO_AF_SPI	0b0101
 
 #endif
